@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+/* Dark Theme (Default) */
+.theme-dark {
+  --color-primary: 51, 51, 51;
+  --color-primary-light: 74, 74, 74;
+  --color-primary-dark: 26, 26, 26;
+  --color-secondary: 0, 150, 199;
+  --color-secondary-light: 72, 202, 228;
+  --color-secondary-dark: 2, 62, 138;
+  --color-accent: 255, 255, 255;
+  --color-accent-light: 248, 249, 250;
+  --color-accent-dark: 233, 236, 239;
+}
+
+/* Light Theme */
+.theme-light {
+  --color-primary: 52, 58, 64;
+  --color-primary-light: 73, 80, 87;
+  --color-primary-dark: 33, 37, 41;
+  --color-secondary: 13, 110, 253;
+  --color-secondary-light: 66, 135, 245;
+  --color-secondary-dark: 0, 53, 102;
+  --color-accent: 248, 249, 250;
+  --color-accent-light: 233, 236, 239;
+  --color-accent-dark: 222, 226, 230;
+}
+
+/* Blue Theme */
+.theme-blue {
+  --color-primary: 25, 55, 109;
+  --color-primary-light: 56, 91, 155;
+  --color-primary-dark: 15, 33, 66;
+  --color-secondary: 0, 119, 182;
+  --color-secondary-light: 0, 180, 216;
+  --color-secondary-dark: 3, 4, 94;
+  --color-accent: 240, 249, 255;
+  --color-accent-light: 229, 243, 255;
+  --color-accent-dark: 202, 240, 248;
+}
+
+/* Green Theme */
+.theme-green {
+  --color-primary: 25, 88, 73;
+  --color-primary-light: 42, 120, 100;
+  --color-primary-dark: 15, 53, 44;
+  --color-secondary: 52, 211, 153;
+  --color-secondary-light: 110, 231, 183;
+  --color-secondary-dark: 16, 185, 129;
+  --color-accent: 240, 253, 250;
+  --color-accent-light: 204, 251, 241;
+  --color-accent-dark: 153, 246, 228;
+}
+
+/* Purple Theme */
+.theme-purple {
+  --color-primary: 76, 29, 149;
+  --color-primary-light: 109, 40, 217;
+  --color-primary-dark: 58, 16, 120;
+  --color-secondary: 139, 92, 246;
+  --color-secondary-light: 167, 139, 250;
+  --color-secondary-dark: 124, 58, 237;
+  --color-accent: 250, 245, 255;
+  --color-accent-light: 243, 232, 255;
+  --color-accent-dark: 237, 233, 254;
+}
+
+/* Apply CSS variables to Tailwind classes */
+.bg-primary {
+  background-color: rgb(var(--color-primary));
+}
+.bg-primary-light {
+  background-color: rgb(var(--color-primary-light));
+}
+.bg-primary-dark {
+  background-color: rgb(var(--color-primary-dark));
+}
+.bg-secondary {
+  background-color: rgb(var(--color-secondary));
+}
+.bg-secondary-light {
+  background-color: rgb(var(--color-secondary-light));
+}
+.bg-secondary-dark {
+  background-color: rgb(var(--color-secondary-dark));
+}
+.bg-accent {
+  background-color: rgb(var(--color-accent));
+}
+.bg-accent-light {
+  background-color: rgb(var(--color-accent-light));
+}
+.bg-accent-dark {
+  background-color: rgb(var(--color-accent-dark));
+}
+
+.text-primary {
+  color: rgb(var(--color-primary));
+}
+.text-primary-light {
+  color: rgb(var(--color-primary-light));
+}
+.text-primary-dark {
+  color: rgb(var(--color-primary-dark));
+}
+.text-secondary {
+  color: rgb(var(--color-secondary));
+}
+.text-secondary-light {
+  color: rgb(var(--color-secondary-light));
+}
+.text-secondary-dark {
+  color: rgb(var(--color-secondary-dark));
+}
+.text-accent {
+  color: rgb(var(--color-accent));
+}
+.text-accent-light {
+  color: rgb(var(--color-accent-light));
+}
+.text-accent-dark {
+  color: rgb(var(--color-accent-dark));
+}
+
+.border-primary {
+  border-color: rgb(var(--color-primary));
+}
+.border-secondary {
+  border-color: rgb(var(--color-secondary));
+}
+.border-accent {
+  border-color: rgb(var(--color-accent));
+}
+
+.ring-secondary {
+  --tw-ring-color: rgb(var(--color-secondary));
+}
+
+/* Print styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .bg-primary, .bg-secondary, .bg-accent {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  #root > div > main > div, #root > div > main > div * {
+    visibility: visible;
+  }
+  #root > div > main > div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
+
+.print-only {
+  display: none;
+}
